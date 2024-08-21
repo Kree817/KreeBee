@@ -6,9 +6,7 @@ import door_wave from "../assets/waving-doorway.png"
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import Header from './Header'
-
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Blog() {
 
@@ -21,7 +19,7 @@ function Blog() {
     }, [])
 
     return (
-
+        
         <div>
             <div className="banner-bg div-height">
                 <p className="margarine-heading-blog">Blogs</p>
@@ -45,8 +43,7 @@ function Blog() {
                             </div>
 
                             <div className="d-grid gap-2 col-6 ml-auto blog-button light-regular">
-                                <Link to={"/admin-edit-blog/" + blog._id} className="btn btn-dark ml-auto blog-button margarine-regular" type="button">Read More</Link>
-                            </div>
+                            <Link to={"/blog-detail/" + blog._id} className="btn btn-dark ml-auto blog-button margarine-regular">Read More</Link>                            </div>
 
                         </div>
                         })
