@@ -1,4 +1,7 @@
-
+*{
+  padding: 0px;
+  margin: 0px;
+}
 
 #root {
   max-width: 1350px;
@@ -118,11 +121,11 @@ padding:30px 0px 30px 0px;
   height: 300px;
 }
 
-.contact-image {
+.contactImage {
   height: 420px;
   width: 450px;
   display: flex;
-  padding-left: 50px;
+  padding-left: 10px;
 }
 
 .blog-image {
@@ -174,8 +177,11 @@ padding: 50px;}
   padding: 10px 5px 10px 0px;
 }
 
-.contact-main{
+.imageContainer{
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
 }
 
 /* Gallery */
@@ -216,12 +222,97 @@ img.wide-image {
   margin-top: 30px;
 }
 
-/* Gallery ends */
+
+.formControl{
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  
+}
+
+.formSubContainer{
+
+  /* margin-left: 450px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+}
 
 
+.loginButton{
+  display: flex;
+  gap: 25px;
+  /* padding-left: 80px; */
+  margin-left: 40px ;
+}
+.Loginbtn{
+  width: 100px;
+}
 
 
+.list-Horizontal {
+  display: flex;
+  flex-direction: column;
+}
 
+.sidebar-container {
+  padding: 20px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.list-item {
+  flex: 1;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+
+.list-item:hover {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+
+.blog-img-comment-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.BlogDetailImg img {
+  max-width: 100%;
+  height: auto;
+}
+
+.commentSection {
+  flex: 1;
+  min-width: 250px;
+}
+
+@media (max-width: 760px) {
+  .blog-img-comment-section {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .commentSection {
+      width: 100%;
+  }
+}
 
 
 
@@ -346,47 +437,66 @@ img.wide-image {
   height: 85px;
   width: 80px;
   margin: 5px;
-  /* padding-left: 50px; */
+  padding-left: 50px;
   padding: 5px;
   margin-top:30px;
 
 
 }
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+}
+
+@media(max-width:760px){
+.banner-bg{
+  background-image: url("./assets/banner.png");
+  background-repeat: no-repeat;
+  background-size: 600px 100px;
+}
+
+.div-height{
+  height: 100px;
+}
+
+.margarine-heading-blog {
+  display: flex;
+  justify-content: center;
+  font-family: "Margarine", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: bold;
+  color: brown;
+  padding: 30px 0px 5px 0px;
+}
 }
 
 
-
-
-
-
-
-/* Media Queries for Responsiveness */
+/* Media Queries for Contact*/
 @media (max-width: 760px) {
-  /* Adjust Banner */
-  .banner-bg {
-    background-size: cover;
-  }
 
-  .div-height {
-    height: auto;
-    padding: 20px 0;
-  }
-
-  /* Stack Contact Image and Form */
-  .contact-main {
-    display: flex;
+  .imageContainer {
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
+    padding: 0px;
+
   }
 
-  .contact-image {
-    height: 300px;
-    width: 100%;
+  .contactImage {
+    height: 200px;
+    width: 200px;
     padding-bottom: 20px;
+  }
+  .contactform{
+    padding-top: 0px;
   }
 
   .margarine-title-blog {
-    text-align: center;
+    /* text-align: center; */
     font-size: 22px;
   }
 
@@ -400,3 +510,93 @@ img.wide-image {
     padding-top: 20px;
   }
 }
+
+
+
+
+/* Media Queries for Login*/
+@media (max-width: 760px) {
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginButton{
+  display: flex;
+  gap: 25px;
+  /* padding-left: 80px; */
+}
+.Loginbtn{
+  width: 200px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Query for min-width: 760px */
+@media (min-width: 760px) {
+  .d-flex {
+    flex-direction: row;
+  }
+
+  .p-4 {
+    padding: 2rem;
+  }
+
+  .form-control {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .d-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Media Query for max-width: 760px */
+@media (max-width: 760px) {
+  .d-flex {
+    flex-direction: column;
+  }
+
+  .flex-md-row {
+    flex-direction: column;
+  }
+
+  .p-4 {
+    padding: 1rem;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .d-grid {
+    display: block;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+
+
+

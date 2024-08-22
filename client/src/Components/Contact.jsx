@@ -137,16 +137,16 @@ function Contact() {
                     <p className="margarine-heading-blog">Contact</p>
                 </div>
 
-                {/* Contact Form and Image Section */}
+                {/* Contact Image First */}
                 <div className="container pt-main">
-                    <div className="row contact-main">
+                    <div className="imageContainer">
                         {/* Contact Image */}
-                        <div className="col-5 justify-items-end order-2 order-md-1">
-                            <img src={hii} className="contact-image" />
+                        <div className="contactImageCon">
+                            <img src={hii} className="contactImage" />
                         </div>
 
                         {/* Contact Form */}
-                        <div className="col-5 order-1 order-md-2">
+                        <div className="contactform">
                             <p className="margarine-title-blog">Feel Free to Drop me a Mail !!</p>
                             <div className="mb-3">
                                 <label className="form-label margarine-regular">Full Name</label>

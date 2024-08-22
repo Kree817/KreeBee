@@ -192,12 +192,21 @@ app.post("/login", async (req, res) => {
     }
 })
 
+// // Protect this route with JWT
+// app.post("/createContact", authenticateToken, (req, res) => {
+//     ContactModel.create(req.body)
+//         .then(contacts => res.json(contacts))
+//         .catch(err => res.json(err))
+// })
+
 // Protect this route with JWT
-app.post("/createContact", authenticateToken, (req, res) => {
+app.post("/createContact", (req, res) => {
     ContactModel.create(req.body)
         .then(contacts => res.json(contacts))
         .catch(err => res.json(err))
 })
+
+
 
 
 //create blog
