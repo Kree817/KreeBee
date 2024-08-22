@@ -1,26 +1,35 @@
+
 // import React, { useState } from "react";
-// import hii from "../assets/hii.png"
-// import { useNavigate } from 'react-router-dom'
-
-// import axios from 'axios'
-
+// import hii from "../assets/hii.png";
+// import { useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 
 // function Contact() {
-//     const [name, setName] = useState()
-//     const [email, setEmail] = useState()
-//     const [message, setMessage] = useState()
-
-//     const navigate = useNavigate()
+//     const [name, setName] = useState('');
+//     const [email, setEmail] = useState('');
+//     const [message, setMessage] = useState('');
+//     const navigate = useNavigate();
 
 //     const Submit = (e) => {
 //         e.preventDefault();
-//         axios.post("http://localhost:3001/createContact", { name, email, message })
-//             .then(result => {
-//                 console.log(result)
-//                 navigate("/")
-//             })
-//             .catch(err => console.log(err))
-//     }
+
+//         // Retrieve token from localStorage (or wherever you store it)
+//         const token = localStorage.getItem('token');
+
+//         axios.post("http://localhost:3001/createContact", { name, email, message }, {
+//             headers: {
+//                 'Authorization': `Bearer ${token}`
+//             }
+//         })
+//         .then(result => {
+//             console.log(result);
+//             navigate("/");
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             alert("Unauthorized or error occurred.");
+//         });
+//     };
 
 //     return (
 //         <div>
@@ -39,25 +48,23 @@
 //                             <p className="margarine-title-blog">Feel Free to Drop me a Mail !!</p>
 //                             <div className="mb-3">
 //                                 <label className="form-label margarine-regular">Full Name</label>
-//                                 <input type="text" className="form-control" id="name" placeholder=" Enter your Good Name" onChange={(e) => setName(e.target.value)} />
-
+//                                 <input type="text" className="form-control" id="name" placeholder="Enter your Good Name" onChange={(e) => setName(e.target.value)} />
 //                             </div>
 
 //                             <div className="mb-3">
 //                                 <label className="form-label margarine-regular">Email address</label>
 //                                 <input type="text" className="form-control" id="email" placeholder="name@domain.com" onChange={(e) => setEmail(e.target.value)} />
-
 //                             </div>
+
 //                             <div className="mb-3">
 //                                 <label className="form-label margarine-regular">Message</label>
 //                                 <textarea className="form-control" id="message" rows="3" onChange={(e) => setMessage(e.target.value)} />
-
 //                             </div>
+
 //                             <div className="d-grid col-6 ml-auto blog-button margarine-regular">
-//                                 <button className="btn btn-dark" >Send Message</button>
+//                                 <button className="btn btn-dark">Send Message</button>
 //                             </div>
 //                         </div>
-
 //                     </div>
 //                     <div className="padding-top contact-map">
 //                         <iframe
@@ -69,17 +76,10 @@
 //                 </div>
 //             </form>
 //         </div>
-//     )
+//     );
 // }
 
 // export default Contact;
-
-
-
-
-
-
-
 
 
 
@@ -132,17 +132,21 @@ function Contact() {
     return (
         <div>
             <form onSubmit={Submit}>
+                {/* Banner Section */}
                 <div className="banner-bg div-height">
                     <p className="margarine-heading-blog">Contact</p>
                 </div>
 
+                {/* Contact Form and Image Section */}
                 <div className="container pt-main">
                     <div className="row contact-main">
-                        <div className="col-5 justify-items-end">
+                        {/* Contact Image */}
+                        <div className="col-5 justify-items-end order-2 order-md-1">
                             <img src={hii} className="contact-image" />
                         </div>
 
-                        <div className="col-5">
+                        {/* Contact Form */}
+                        <div className="col-5 order-1 order-md-2">
                             <p className="margarine-title-blog">Feel Free to Drop me a Mail !!</p>
                             <div className="mb-3">
                                 <label className="form-label margarine-regular">Full Name</label>
@@ -164,6 +168,8 @@ function Contact() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Map Section */}
                     <div className="padding-top contact-map">
                         <iframe
                             width="1100"
