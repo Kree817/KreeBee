@@ -70,14 +70,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Modal, Button, ListGroup } from 'react-bootstrap';
-import laptop_wave from "../assets/laptop-wave.png"; // Fixed import statement
+// import laptop_wave from "../assets/laptop-wave.png"; 
 
 function UserSidebar() {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Perform logout logic, e.g., clearing tokens
+    // logout logic-clearing tokens
     localStorage.removeItem('token');
     navigate("/login");
   };

@@ -163,7 +163,7 @@ function Contact() {
                                 <textarea className="form-control" id="message" rows="3" onChange={(e) => setMessage(e.target.value)} />
                             </div>
 
-                            <div className="d-grid col-6 ml-auto blog-button margarine-regular">
+                            <div className="d-grid ml-auto blog-button margarine-regular">
                                 <button className="btn btn-dark">Send Message</button>
                             </div>
                         </div>

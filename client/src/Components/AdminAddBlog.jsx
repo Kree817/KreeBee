@@ -21,7 +21,7 @@ function AdminAddBlog() {
     })
     .then(result => {
       console.log(result);
-      navigate("/blog");
+      navigate("/user-dashboard");
     })
     .catch(err => {
       console.log(err);
